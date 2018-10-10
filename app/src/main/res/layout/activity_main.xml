@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingTop="4dp"
+    android:background="@drawable/sun_earth_eclipse"
+    tools:context="com.example.oluwatobig.coinvert.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/titleLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/currencies"
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMediumInverse"
+            android:textStyle="bold"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:paddingRight="2dp"
+            android:paddingLeft="4dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/bitcoin"
+            android:textAlignment="center"
+            android:textAppearance="?android:textAppearanceMediumInverse"
+            android:padding="2dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/ethereum"
+            android:textAppearance="?android:textAppearanceMediumInverse"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:textAlignment="center"
+            android:textAllCaps="true"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lineView"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#303F9F"
+        android:layout_below="@id/titleLL"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lineView">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <ImageView
+        android:id="@+id/emptyIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:src="@drawable/ic_empty_screen"/>
+
+    <TextView
+        android:id="@+id/empty_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emptyIV"
+        android:textAppearance="?android:textAppearanceSmallInverse"
+        android:text="Unable to load list of Currencies"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
